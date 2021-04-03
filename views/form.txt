@@ -1,0 +1,93 @@
+extends layout 
+
+block content 
+    -data = data || {}
+
+    if errors 
+        ul 
+            for error in errors 
+                li= error.msg 
+
+    form(action="." method="POST")
+        label(for="fname") First Name: 
+        input(
+            type="text"
+            id="fname"
+            name="fname"
+            value=data.fname
+        ) 
+
+        label(for="lname") Last Name: 
+        input(
+            type="text"
+            id="lname"
+            name="lname"
+            value=data.lname
+        ) 
+
+        label(for="male") Male: 
+        input(
+            type="radio"
+            id="male"
+            name="gender"
+            value="male"
+        ) 
+
+        label(for="female") Female: 
+        input(
+            type="radio"
+            id="female"
+            name="gender"
+            value="female"
+        )
+
+        label(for="birthday") Date of birth: 
+        input(
+            type="date"
+            id="birthday"
+            name="birthday"
+        )
+
+        label(for="sin") SIN: 
+        input(
+            type="text"
+            id="sin"
+            name="sin"
+        )
+
+        label(for="phone") Phone: 
+        input(
+            type="tel"
+            id="phone"
+            name="phone"
+        )
+
+        label(for="address") Address : 
+        input(
+            type="text"
+            id="address"
+            name="address"
+        ) 
+
+        label(for="city") City: 
+        input(
+            type="city"
+            id="city"
+            name="city"
+        ) 
+
+        label(for="province") Province: 
+        input(
+            type="text"
+            id="province"
+            name="province"
+        ) 
+
+        label(for="email") Email: 
+        input(
+            type="email"
+            id="email"
+            name="email"
+        )
+
+        input(type="submit" value="Submit")

@@ -1,0 +1,136 @@
+extends layout
+
+block content
+  -data = data || {}
+
+  if errors
+    ul.my-errors
+      for error in errors
+        li= error.msg
+
+  form(action="." method="POST" class="form-registration")
+    label(for="fname") First Name:
+    input(
+      type="text"
+      id="fname"
+      name="fname"
+      class="form-control"
+      value=data.fname
+    )
+
+    label(for="lname") Last Name:
+    input(
+      type="text"
+      id="lname"
+      name="lname"
+      class="form-control"
+      value=data.fname
+    )
+
+    label(for="gender") Gender: 
+    input(
+        type="text"
+        id="gender"
+        name="gender"
+        class="form-control"
+        value=data.gender
+        ) 
+
+    label(for="birthday") Date of birth: 
+    input(
+        type="date"
+        id="birthday"
+        name="birthday"
+        class="form-control"
+        value=data.birthday 
+        )
+
+    label(for="sin") S.I.N: 
+    input(
+        type="number"
+        id="sin"
+        name="sin"
+        class="form-control"
+        value=data.sin
+        )
+
+    label(for="healthC") Health Card: 
+    input(
+        type="number"
+        id="healthC"
+        name="healthC"
+        class="form-control"
+        value=data.health
+        )
+
+    label(for="physician") Family physician: 
+    input(
+        type="text"
+        id="physician"
+        name="physician"
+        class="form-control"
+        value=data.physician
+        )
+
+    label(for="phone") Phone: 
+    input(
+        type="tel"
+        id="phone"
+        name="phone"
+        class="form-control"
+        value=data.phone 
+        )
+
+    label(for="email") Email:
+    input(
+      type="email"
+      id="email"
+      name="email"
+      class="form-control"
+      value=data.email
+    )
+
+    label(for="address") Street Address : 
+    input(
+        type="text"
+        id="address"
+        name="address"
+        class="form-control"
+        value=data.address
+        ) 
+
+    label(for="city") City: 
+    input(
+        type="text"
+        id="city"
+        name="city"
+        class="form-control"
+        value=data.city
+        ) 
+
+    label(for="province") Province: 
+    input(
+        type="text"
+        id="province"
+        name="province"
+        class="form-control"
+        value=data.province
+        ) 
+
+    label(for='vstatus') Choose a vaccine status:
+        select#vstatus(name='vstatus')
+            option(value='dose0') No dose received
+            option(value='dose1') First dose received
+            option(value='dose2') Second dose received
+
+
+    input(
+      type="submit"
+      value="Submit"
+      class="btn btn-lg btn-primary btn-block"
+    )
+    input(
+        type="reset"
+      value="Reset"
+      class="btn btn-lg btn-primary btn-block"
+    )

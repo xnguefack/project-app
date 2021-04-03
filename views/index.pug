@@ -1,0 +1,37 @@
+extends layout
+
+block content
+
+  if registrations.length
+    table.listing-table.table-dark.table-striped
+      tr
+        th First Name
+        th Last Name
+        th Gender 
+        th Date of Birth
+        th S.I.N
+        th Health Card
+        th Family Physician
+        th Phone
+        th Email
+        th Address
+        th City
+        th Province
+        th Choose a vaccine status
+      each registration in registrations
+        tr
+          td= registration.fname
+          td= registration.lname
+          td= registration.gender
+          td= registration.birthday
+          td= registration.sin
+          td= registration.healthC
+          td= registration.physician
+          td= registration.phone
+          td= registration.email
+          td= registration.address
+          td= registration.city
+          td= registration.province
+          td= registration.vstatus
+  else
+    p No registrations yet :(
